@@ -35,6 +35,7 @@ public class RobotContainer
     //Command definitions
     private final AutoDrive simpleAutonomousCommand = new AutoDrive(drivetrain);
     private final AutoScoreSimple complexAutonomousCommand = new AutoScoreSimple(drivetrain);
+    private final HalloweenAuto halloweenAutonomousCommand = new HalloweenAuto(drivetrain);
 
     private final Shoot shoot = new Shoot(shooter, 1.0);
     private final StopShooter stopShooter = new StopShooter(shooter);
@@ -66,6 +67,7 @@ public class RobotContainer
         //Add options the autonomous chooser
         autoChooser.addOption("Autonomous Drive", simpleAutonomousCommand);
         autoChooser.addOption("Autonomous Score", complexAutonomousCommand);
+        autoChooser.addOption("Haloween Auto", halloweenAutonomousCommand);
 
         // Put the chooser on the dashboard
         Shuffleboard.getTab("Autonomous").add(autoChooser);
