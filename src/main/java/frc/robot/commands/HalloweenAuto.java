@@ -35,6 +35,7 @@ public class HalloweenAuto extends CommandBase {
         this.voltage = distanceSensor.getVoltage();
         this.range = Convert(this.voltage);
         System.out.println(this.range);
+        System.out.println(this.voltage);
         if(this.range < 1.5){
             
         }
