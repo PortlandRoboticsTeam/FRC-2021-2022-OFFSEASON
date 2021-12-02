@@ -27,12 +27,12 @@ public class HalloweenAuto extends CommandBase {
 
     @Override
     public void initialize() {
-        
+        distanceSensor.setAverageBits(8);
     }
 
     @Override
     public void execute() {
-        this.voltage = distanceSensor.getVoltage();
+        this.voltage = distanceSensor.getAverageVoltage();
         this.range = Convert(this.voltage);
         System.out.println(this.range);
         System.out.println(this.voltage);
