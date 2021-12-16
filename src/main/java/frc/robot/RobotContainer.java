@@ -30,7 +30,7 @@ public class RobotContainer
     private final Elevator elevator = new Elevator();
     //private final Intake intake = new Intake();
     private final Shooter shooter = new Shooter();
-    private final WheelSpinner wheelSpinner = new WheelSpinner();
+    //private final WheelSpinner wheelSpinner = new WheelSpinner();
     private final TshirtCannon tshirtCannon = new TshirtCannon();
 
     //Command definitions
@@ -40,9 +40,11 @@ public class RobotContainer
 
     private final Shoot shoot = new Shoot(shooter, 1.0);
     private final StopShooter stopShooter = new StopShooter(shooter);
+    /*
     private final SpinForward spinFoward = new SpinForward(wheelSpinner);
     private final SpinBack spinBack = new SpinBack(wheelSpinner);
     private final SpinStop spinStop = new SpinStop(wheelSpinner);
+    */
 
     private final ElevatorUp elevatorUp = new ElevatorUp(elevator);
     private final ElevatorDown elevatorDown = new ElevatorDown(elevator);
@@ -99,9 +101,11 @@ public class RobotContainer
     private void configureButtonBindings() {
         //Names buttons
         JoystickButton m_3 = new JoystickButton(m_stick, 3);
-        //JoystickButton m_4 = new JoystickButton(m_stick, 4);
+        /*
+        JoystickButton m_4 = new JoystickButton(m_stick, 4);
         JoystickButton m_5 = new JoystickButton(m_stick, 5);
         JoystickButton m_6 = new JoystickButton(m_stick, 6);
+        */
 
         JoystickButton s_1 = new JoystickButton(s_stick, 1);
         JoystickButton s_2 = new JoystickButton(s_stick, 2);
@@ -117,10 +121,12 @@ public class RobotContainer
         //Binds buttons
         m_3.whileHeld(shoot);
         m_3.whenReleased(stopShooter);
+        /*
         m_5.whenPressed(spinFoward);
         m_6.whenPressed(spinBack);
         m_5.whenReleased(spinStop);
         m_6.whenReleased(spinStop);
+        */
 
         s_1.whileHeld(elevatorLiftBotReverse);
         s_1.whenReleased(stopElevator);

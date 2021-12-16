@@ -7,19 +7,23 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
-import static frc.robot.Constants.*;
+//import static frc.robot.Constants.*;
 
 
 public class TshirtCannon extends SubsystemBase{
-    private final Solenoid releaseSolenoid = new Solenoid(frc.robot.Constants.shootSolenoidPortNum);
-    private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(reloadSolenoidPortNums[0], reloadSolenoidPortNums[1]);
+    
+    private final Solenoid releaseSolenoid = new Solenoid(0, 0);
+    private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(0, 1, 2);
     private final Timer timer = new Timer();
+
+    private final static TshirtCannon INSTANCE = new TshirtCannon();
 
     public TshirtCannon(){
         reloadSolenoid.set(Value.kReverse);
     }
 
     public void shootTshirt(){
+        System.out.println("thisbe working");
         timer.start();
         while(timer.get()<0.5){
             releaseSolenoid.set(true);
@@ -49,5 +53,9 @@ public class TshirtCannon extends SubsystemBase{
         timer.stop();
         timer.reset();
         this.retractReloadArm();
+    }
+
+    public static TshirtCannon getInstance(){
+        return INSTANCE;
     }
 }
