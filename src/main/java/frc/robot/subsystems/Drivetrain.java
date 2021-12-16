@@ -16,12 +16,12 @@ public class Drivetrain extends SubsystemBase {
     private final static WPI_VictorSPX rightRear = new WPI_VictorSPX(wheel2PortNum);
     private final static WPI_VictorSPX leftFront = new WPI_VictorSPX(wheel3PortNum);
     private final static WPI_VictorSPX leftRear = new WPI_VictorSPX(wheel4PortNum);
-    private final static WPI_VictorSPX centerOne = new WPI_VictorSPX(wheel5PortNum);
-    private final static WPI_VictorSPX centerTwo = new WPI_VictorSPX(wheel6PortNum);
+    // private final static WPI_VictorSPX centerOne = new WPI_VictorSPX(wheel5PortNum);
+    // private final static WPI_VictorSPX centerTwo = new WPI_VictorSPX(wheel6PortNum);
 
     private final static SpeedControllerGroup right = new SpeedControllerGroup(rightFront, rightRear);
     private final static SpeedControllerGroup left = new SpeedControllerGroup(leftFront, leftRear);
-    private final static SpeedControllerGroup center = new SpeedControllerGroup(centerOne, centerTwo);
+    // private final static SpeedControllerGroup center = new SpeedControllerGroup(centerOne, centerTwo);
 
     private final static DifferentialDrive drive = new DifferentialDrive(right, left);
 
@@ -37,8 +37,8 @@ public class Drivetrain extends SubsystemBase {
         leftRear.stopMotor();
         rightFront.stopMotor();
         rightRear.stopMotor();
-        centerOne.stopMotor();
-        centerTwo.stopMotor();
+        // centerOne.stopMotor();
+        // centerTwo.stopMotor();
     }
 
     public double smoothLogisticInput(double input) {
@@ -62,8 +62,8 @@ public class Drivetrain extends SubsystemBase {
             twist *= mod;
         }
 
-        drive.arcadeDrive(forward, twist);
-        center.set(side);
+        drive.tankDrive(forward, twist);
+        // center.set(side);
         drive.feedWatchdog();
         //drive.setSafetyEnabled(false);
         //centerOne.setSafetyEnabled(false);
@@ -72,7 +72,7 @@ public class Drivetrain extends SubsystemBase {
 
     public void slideDriveSimple(double forward, double side, double twist, double scale) {
         drive.arcadeDrive(forward*scale, twist*scale);
-        center.set(side*scale);
+        // center.set(side*scale);
         drive.feedWatchdog();
     }
 

@@ -36,9 +36,13 @@ public final class Constants
     public static final int shooterTopPortNum = 8;
     public static final int wheelSpinnerPortNum = 9;
 
+    public static int shootSolenoidPortNum = 0;                    //port number for the single solenoid in charge of releasing pressure in the t-shirt cannon
+    public static final int reloadSolenoidPortNums[] = {0,1};     //port numbers for the double solenoid in charge of extending and retarcting the reload mechanism
+
     //A:7 B:8 C:9 D:10, E:11, F:12
 
     //USB Port Numberings
     public static final int mStickPort = 0;
     public static final int sStickPort = 1;
+
 }

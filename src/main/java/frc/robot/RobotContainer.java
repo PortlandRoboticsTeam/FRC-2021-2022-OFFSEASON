@@ -31,6 +31,7 @@ public class RobotContainer
     //private final Intake intake = new Intake();
     private final Shooter shooter = new Shooter();
     private final WheelSpinner wheelSpinner = new WheelSpinner();
+    private final TshirtCannon tshirtCannon = new TshirtCannon();
 
     //Command definitions
     private final AutoDrive simpleAutonomousCommand = new AutoDrive(drivetrain);
@@ -50,6 +51,8 @@ public class RobotContainer
     private final ElevatorLiftBot elevatorLiftBot = new ElevatorLiftBot(elevator);
     private final ElevatorLiftBotReverse elevatorLiftBotReverse = new ElevatorLiftBotReverse(elevator);
     private final ElevatorStop stopElevator = new ElevatorStop(elevator);
+
+    private final ShootTshirt shootTshirt = new ShootTshirt(tshirtCannon);
 
     //Joystick definitions
     public static Joystick m_stick = new Joystick(mStickPort);
@@ -107,6 +110,10 @@ public class RobotContainer
         JoystickButton s_5 = new JoystickButton(s_stick, 5);
         JoystickButton s_6 = new JoystickButton(s_stick, 6);
 
+        JoystickButton m_7 = new JoystickButton(m_stick, 7);
+        //JoystickButton m_8 = new JoystickButton(m_stick, 8);
+        //JoystickButton m_9 = new JoystickButton(m_stick, 9);
+
         //Binds buttons
         m_3.whileHeld(shoot);
         m_3.whenReleased(stopShooter);
@@ -128,6 +135,9 @@ public class RobotContainer
         s_4.whenReleased(stopElevator);
         s_5.whenReleased(stopElevator);
         s_6.whenReleased(stopElevator);
+
+        m_7.whenPressed(shootTshirt);
+
 
     }
 
