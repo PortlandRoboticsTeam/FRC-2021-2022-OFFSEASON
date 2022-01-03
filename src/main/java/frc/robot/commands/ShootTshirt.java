@@ -7,9 +7,9 @@ public class ShootTshirt extends CommandBase{
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
     private final TshirtCannon tshirtCannon;
 
-    public ShootTshirt(TshirtCannon var_tshirtCannon){
-        tshirtCannon = var_tshirtCannon;
-        addRequirements(var_tshirtCannon);
+    public ShootTshirt(TshirtCannon tshirtCannon){
+        this.tshirtCannon = tshirtCannon;
+        addRequirements(tshirtCannon);
     }
     
 

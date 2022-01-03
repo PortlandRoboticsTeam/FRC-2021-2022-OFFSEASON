@@ -7,14 +7,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
-//import static frc.robot.Constants.*;
-
+import static frc.robot.Constants.*;
 
 public class TshirtCannon extends SubsystemBase{
     
-    private final Solenoid releaseSolenoid = new Solenoid(0, 0);
-    private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(0, 1, 2);
-    private final Timer timer = new Timer();
+    private final Solenoid releaseSolenoid = new Solenoid(pcmCanPort, releaseSolenoidPortNum);
+    private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(pcmCanPort, reloadSolenoidPortNums1, reloadSolenoidPortNums2);
+    private final Timer tshirtTimer = new Timer();
 
     private final static TshirtCannon INSTANCE = new TshirtCannon();
 
@@ -23,13 +22,13 @@ public class TshirtCannon extends SubsystemBase{
     }
 
     public void shootTshirt(){
-        System.out.println("thisbe working");
-        timer.start();
-        while(timer.get()<0.5){
+        System.out.println("this be working");
+        tshirtTimer.start();
+        while(tshirtTimer.get()<0.5){
             releaseSolenoid.set(true);
         }
-        timer.stop();
-        timer.reset();
+        tshirtTimer.stop();
+        tshirtTimer.reset();
         releaseSolenoid.set(false);
     }
 
@@ -46,12 +45,12 @@ public class TshirtCannon extends SubsystemBase{
     }
 
     public void reload(){
-        timer.start();
-        while(timer.get()<5){
+        tshirtTimer.start();
+        while(tshirtTimer.get()<5){
             this.extendReloadArm();
         }
-        timer.stop();
-        timer.reset();
+        tshirtTimer.stop();
+        tshirtTimer.reset();
         this.retractReloadArm();
     }
 
