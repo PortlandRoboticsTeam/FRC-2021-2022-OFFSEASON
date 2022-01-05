@@ -62,7 +62,7 @@ public class Drivetrain extends SubsystemBase {
             twist *= mod;
         }
 
-        drive.tankDrive(forward, twist);
+        drive.arcadeDrive(forward, twist);
         // center.set(side);
         drive.feedWatchdog();
         //drive.setSafetyEnabled(false);

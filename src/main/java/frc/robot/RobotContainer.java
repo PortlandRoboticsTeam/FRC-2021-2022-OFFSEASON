@@ -17,6 +17,8 @@ import frc.robot.subsystems.*;
 
 import static frc.robot.Constants.*;
 
+import javax.management.openmbean.OpenDataException;
+
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -34,6 +36,9 @@ public class RobotContainer
     private final HalloweenAuto halloweenAutonomousCommand = new HalloweenAuto(drivetrain);
 
     private final ShootTshirt shootTshirt = new ShootTshirt(tshirtCannon);
+    private final ReloadTshirt reloadTshirt = new ReloadTshirt(tshirtCannon);
+    private final ReleaseReloadArm releaseReloadArm = new ReleaseReloadArm(tshirtCannon);
+    private final ToggleSafety toggleSafety = new ToggleSafety(tshirtCannon);
 
     //Joystick definitions
     public static Joystick m_stick = new Joystick(mStickPort);
@@ -70,30 +75,18 @@ public class RobotContainer
     //Defines command-button mappings
     private void configureButtonBindings() {
         //Names buttons
-        //JoystickButton m_3 = new JoystickButton(m_stick, 3);
-        /*
+        JoystickButton m_1 = new JoystickButton(m_stick, 1);
+        JoystickButton m_2 = new JoystickButton(m_stick, 2);
+        JoystickButton m_3 = new JoystickButton(m_stick, 3);
         JoystickButton m_4 = new JoystickButton(m_stick, 4);
-        JoystickButton m_5 = new JoystickButton(m_stick, 5);
-        JoystickButton m_6 = new JoystickButton(m_stick, 6);
-        */
 
-        /*
-        JoystickButton s_1 = new JoystickButton(s_stick, 1);
-        JoystickButton s_2 = new JoystickButton(s_stick, 2);
-        JoystickButton s_3 = new JoystickButton(s_stick, 3);
-        JoystickButton s_4 = new JoystickButton(s_stick, 4);
-        JoystickButton s_5 = new JoystickButton(s_stick, 5);
-        JoystickButton s_6 = new JoystickButton(s_stick, 6);
-        */
-
-        JoystickButton m_7 = new JoystickButton(m_stick, 7);
-        //JoystickButton m_8 = new JoystickButton(m_stick, 8);
-        //JoystickButton m_9 = new JoystickButton(m_stick, 9);
-
+        //JoystickButton s_1 = new JoystickButton(s_stick, 1);
         //Binds buttons
 
-        m_7.whenPressed(shootTshirt);
-
+        m_1.whenPressed(shootTshirt);
+        m_2.whenHeld(toggleSafety);
+        m_3.whenPressed(reloadTshirt);
+        m_4.whenPressed(releaseReloadArm);
 
     }
 

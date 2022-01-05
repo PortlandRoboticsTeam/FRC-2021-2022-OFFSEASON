@@ -14,22 +14,23 @@ public class TshirtCannon extends SubsystemBase{
     private final Solenoid releaseSolenoid = new Solenoid(pcmCanPort, releaseSolenoidPortNum);
     private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(pcmCanPort, reloadSolenoidPortNums1, reloadSolenoidPortNums2);
     private final Timer tshirtTimer = new Timer();
-
-    private final static TshirtCannon INSTANCE = new TshirtCannon();
+    private Boolean safety = false;
 
     public TshirtCannon(){
         reloadSolenoid.set(Value.kReverse);
     }
 
     public void shootTshirt(){
-        System.out.println("this be working");
-        tshirtTimer.start();
-        while(tshirtTimer.get()<0.5){
-            releaseSolenoid.set(true);
+        System.out.println(this.safety);
+        if(safety){
+            tshirtTimer.start();
+            while(tshirtTimer.get()<0.25){
+                releaseSolenoid.set(true);
+            }
+            tshirtTimer.stop();
+            tshirtTimer.reset();
+            releaseSolenoid.set(false);
         }
-        tshirtTimer.stop();
-        tshirtTimer.reset();
-        releaseSolenoid.set(false);
     }
 
     public void extendReloadArm(){
@@ -54,7 +55,11 @@ public class TshirtCannon extends SubsystemBase{
         this.retractReloadArm();
     }
 
-    public static TshirtCannon getInstance(){
-        return INSTANCE;
+    public void toggleSafety(){
+        System.out.println(this.safety);
+        this.safety = !this.safety;
+        System.out.println(this.safety);
     }
+
+
 }
