@@ -17,7 +17,6 @@ import frc.robot.subsystems.*;
 
 import static frc.robot.Constants.*;
 
-import javax.management.openmbean.OpenDataException;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -38,7 +37,8 @@ public class RobotContainer
     private final ShootTshirt shootTshirt = new ShootTshirt(tshirtCannon);
     private final ReloadTshirt reloadTshirt = new ReloadTshirt(tshirtCannon);
     private final ReleaseReloadArm releaseReloadArm = new ReleaseReloadArm(tshirtCannon);
-    private final ToggleSafety toggleSafety = new ToggleSafety(tshirtCannon);
+    private final SafetyOff safetyOff = new SafetyOff(tshirtCannon);
+    private final SafetyOn safetyOn = new SafetyOn(tshirtCannon);
 
     //Joystick definitions
     public static Joystick m_stick = new Joystick(mStickPort);
@@ -84,7 +84,8 @@ public class RobotContainer
         //Binds buttons
 
         m_1.whenPressed(shootTshirt);
-        m_2.whenHeld(toggleSafety);
+        m_2.whenPressed(safetyOff);
+        m_2.whenReleased(safetyOn);
         m_3.whenPressed(reloadTshirt);
         m_4.whenPressed(releaseReloadArm);
 

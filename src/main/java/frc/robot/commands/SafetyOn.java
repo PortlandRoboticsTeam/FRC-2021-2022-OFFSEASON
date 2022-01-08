@@ -3,11 +3,11 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.TshirtCannon;
 
-public class ToggleSafety extends CommandBase{
+public class SafetyOn extends CommandBase{
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
     private final TshirtCannon tshirtCannon;
 
-    public ToggleSafety(TshirtCannon tshirtCannon){
+    public SafetyOn(TshirtCannon tshirtCannon){
         this.tshirtCannon = tshirtCannon;
         addRequirements(tshirtCannon);
     }
@@ -15,7 +15,7 @@ public class ToggleSafety extends CommandBase{
 
     @Override
     public void initialize(){
-        tshirtCannon.toggleSafety();
+        tshirtCannon.safetyOn();
     }
 
     @Override
@@ -31,7 +31,6 @@ public class ToggleSafety extends CommandBase{
 
     @Override
     public void end(boolean interrupted){
-    tshirtCannon.toggleSafety();
-    
+
     }
 }
