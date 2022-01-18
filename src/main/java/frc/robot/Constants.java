@@ -27,15 +27,16 @@ public final class Constants
     public static final int wheel4PortNum = 3;  //rear left
     public static final int wheel5PortNum = 5;  //center one
     public static final int wheel6PortNum = 6;  //center two
-
-
-    public static final int pcmCanPort = 7;
+    public static final int pcmCanPort = 7;     //Pnuematic Control Module
     
     //PCM port numbers
-    public static int releaseSolenoidPortNum = 0;                             //port number for the single solenoid in charge of releasing pressure in the t-shirt cannon
-    public static final int reloadSolenoidPortNums1 = 1;     //port numbers for the double solenoid in charge of extending and retarcting the reload mechanism
-    public static final int reloadSolenoidPortNums2 = 2;
+    public static final int releaseSolenoidPortNum = 0;           //port number for the single solenoid
+    public static final int reloadSolenoidPortNums1 = 1;    //port numbers for the double solenoid
+    public static final int reloadSolenoidPortNums2 = 2;    //port numbers for the double solenoid
 
+    //Analog Device Port NUmbers
+    public  static final int ultrasonicSensorPortNum = 0;
+    
     //A:7 B:8 C:9 D:10, E:11, F:12
 
     //USB Port Numberings

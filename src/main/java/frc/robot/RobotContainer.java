@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.*;
@@ -29,6 +30,7 @@ public class RobotContainer
     // Subsystem definitions
     private final Drivetrain drivetrain = new Drivetrain();
     private final TshirtCannon tshirtCannon = new TshirtCannon();
+    private final UltrasonicSensor distanceSensor = new UltrasonicSensor();
 
     //Command definitions
     private final AutoDrive simpleAutonomousCommand = new AutoDrive(drivetrain);
@@ -59,6 +61,9 @@ public class RobotContainer
 
         // Put the chooser on the dashboard
         Shuffleboard.getTab("Autonomous").add(autoChooser);
+        SmartDashboard.putNumber("Distance", distanceSensor.getRange());
+        System.out.println(distanceSensor.getRange());
+        
 
         //Set driving mode
         drivetrain.setDefaultCommand(
