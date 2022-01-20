@@ -1,21 +1,21 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+// import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+// import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
 import static frc.robot.Constants.*;
 
 public class TshirtCannon extends SubsystemBase{
     
     private final Solenoid releaseSolenoid = new Solenoid(pcmCanPort, releaseSolenoidPortNum);
-    private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(pcmCanPort, reloadSolenoidPortNums1, reloadSolenoidPortNums2);
+    //private final DoubleSolenoid reloadSolenoid = new DoubleSolenoid(pcmCanPort, reloadSolenoidPortNums1, reloadSolenoidPortNums2);
     private Boolean safety = false;
 
     public TshirtCannon(){
-        reloadSolenoid.set(Value.kReverse);
+        //reloadSolenoid.set(Value.kReverse);
     }
 
     public void shootTshirt(){
@@ -29,15 +29,15 @@ public class TshirtCannon extends SubsystemBase{
     }
 
     public void extendReloadArm(){
-        reloadSolenoid.set(Value.kForward);
+        //reloadSolenoid.set(Value.kForward);
     }
 
     public void retractReloadArm(){
-        reloadSolenoid.set(Value.kReverse);
+        //reloadSolenoid.set(Value.kReverse);
     }
 
     public void releaseReloadArm(){
-        reloadSolenoid.set(Value.kOff);
+        //reloadSolenoid.set(Value.kOff);
     }
 
     public void reload(){

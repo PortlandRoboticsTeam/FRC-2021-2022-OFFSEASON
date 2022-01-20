@@ -1,0 +1,106 @@
+       ********** Robot program starting **********  
+       NT: server: client CONNECTED: 172.22.11.1 port 64421  
+        Warning    44003    FRC:  No robot code is currently running.    Driver Station    
+        Warning    1    Loop time of 0.02s overrun
+    edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301)    
+        Warning  at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301): Loop time of 0.02s overrun  
+         
+       CommandScheduler loop overrun  
+        Warning    1    	Drivetrain.periodic(): 0.000093s
+	buttons.run(): 0.000289s
+	TshirtCannon.periodic(): 0.009991s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	Drivetrain.periodic(): 0.000093s  
+       	buttons.run(): 0.000289s  
+       	TshirtCannon.periodic(): 0.009991s  
+         
+        Warning    1    	SmartDashboard.updateValues(): 0.010757s
+	disabledInit(): 0.200499s
+	disablePeriodic(): 0.006735s
+	robotPeriodic(): 0.317847s
+	LiveWindow.updateValues(): 0.107086s
+	Shuffleboard.update(): 0.000555s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	SmartDashboard.updateValues(): 0.010757s  
+       	disabledInit(): 0.200499s  
+       	disablePeriodic(): 0.006735s  
+       	robotPeriodic(): 0.317847s  
+       	LiveWindow.updateValues(): 0.107086s  
+       	Shuffleboard.update(): 0.000555s  
+         
+        Warning    0    [phoenix] Library initialization is complete.        
+        Warning    0    [phoenix-diagnostics] Server 1.8.6 (Jan  8 2021,20:09:49) running on port: 1250        
+        ERROR    1    DifferentialDrive... Output not updated often enough.    edu.wpi.first.wpilibj.MotorSafety.check(MotorSafety.java:96)    
+       Error at edu.wpi.first.wpilibj.MotorSafety.check(MotorSafety.java:96): DifferentialDrive... Output not updated often enough.  
+        Warning    1    Loop time of 0.02s overrun
+    edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301)    
+        Warning  at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301): Loop time of 0.02s overrun  
+         
+       CommandScheduler loop overrun  
+        Warning    1    	Drivetrain.periodic(): 0.000009s
+	buttons.run(): 0.000022s
+	DriveSlide.execute(): 0.031643s
+	TshirtCannon.periodic(): 0.000013s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	Drivetrain.periodic(): 0.000009s  
+       	buttons.run(): 0.000022s  
+       	DriveSlide.execute(): 0.031643s  
+       	TshirtCannon.periodic(): 0.000013s  
+         
+        Warning    1    	teleopPeriodic(): 0.000581s
+	SmartDashboard.updateValues(): 0.000090s
+	robotPeriodic(): 0.048181s
+	LiveWindow.updateValues(): 0.000785s
+	Shuffleboard.update(): 0.000309s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	teleopPeriodic(): 0.000581s  
+       	SmartDashboard.updateValues(): 0.000090s  
+       	robotPeriodic(): 0.048181s  
+       	LiveWindow.updateValues(): 0.000785s  
+       	Shuffleboard.update(): 0.000309s  
+         
+       true  
+       fireing true  
+        Warning    1    Loop time of 0.02s overrun
+    edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301)    
+        Warning  at edu.wpi.first.wpilibj.IterativeRobotBase.printLoopOverrunMessage(IterativeRobotBase.java:301): Loop time of 0.02s overrun  
+         
+       CommandScheduler loop overrun  
+        Warning    1    	ShootTshirt.execute(): 0.000038s
+	ShootTshirt.initialize(): 0.031328s
+	Drivetrain.periodic(): 0.000010s
+	buttons.run(): 0.000025s
+	DriveSlide.execute(): 0.000315s
+	ShootTshirt.end(false): 0.009281s
+	TshirtCannon.periodic(): 0.000012s
+	SafetyOff.end(true): 0.002857s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	ShootTshirt.execute(): 0.000038s  
+       	ShootTshirt.initialize(): 0.031328s  
+       	Drivetrain.periodic(): 0.000010s  
+       	buttons.run(): 0.000025s  
+       	DriveSlide.execute(): 0.000315s  
+       	ShootTshirt.end(false): 0.009281s  
+       	TshirtCannon.periodic(): 0.000012s  
+       	SafetyOff.end(true): 0.002857s  
+         
+        Warning    1    	teleopPeriodic(): 0.000145s
+	SmartDashboard.updateValues(): 0.000046s
+	robotPeriodic(): 0.066130s
+	LiveWindow.updateValues(): 0.000882s
+	Shuffleboard.update(): 0.000225s
+    edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63)    
+        Warning  at edu.wpi.first.wpilibj.Tracer.lambda$printEpochs$0(Tracer.java:63): 	teleopPeriodic(): 0.000145s  
+       	SmartDashboard.updateValues(): 0.000046s  
+       	robotPeriodic(): 0.066130s  
+       	LiveWindow.updateValues(): 0.000882s  
+       	Shuffleboard.update(): 0.000225s  
+         
+       therminated false  
+       true  
+       fireing true  
+       therminated false  
+        Warning    44000    DS Disable    Driver Station    
+        Warning    44000    DS Disable    Driver Station    
+        Warning    44000    DS Disable    Driver Station    
+        Warning    44000    DS Disable    Driver Station    

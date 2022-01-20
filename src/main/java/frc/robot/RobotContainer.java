@@ -10,7 +10,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.*;
@@ -30,15 +29,14 @@ public class RobotContainer
     // Subsystem definitions
     private final Drivetrain drivetrain = new Drivetrain();
     private final TshirtCannon tshirtCannon = new TshirtCannon();
-    private final UltrasonicSensor distanceSensor = new UltrasonicSensor();
+    //private final UltrasonicSensor distanceSensor = new UltrasonicSensor();
 
     //Command definitions
     private final AutoDrive simpleAutonomousCommand = new AutoDrive(drivetrain);
-    private final HalloweenAuto halloweenAutonomousCommand = new HalloweenAuto(drivetrain);
 
     private final ShootTshirt shootTshirt = new ShootTshirt(tshirtCannon);
-    private final ReloadTshirt reloadTshirt = new ReloadTshirt(tshirtCannon);
-    private final ReleaseReloadArm releaseReloadArm = new ReleaseReloadArm(tshirtCannon);
+    // private final ReloadTshirt reloadTshirt = new ReloadTshirt(tshirtCannon);
+    // private final ReleaseReloadArm releaseReloadArm = new ReleaseReloadArm(tshirtCannon);
     private final SafetyOff safetyOff = new SafetyOff(tshirtCannon);
     private final SafetyOn safetyOn = new SafetyOn(tshirtCannon);
 
@@ -57,12 +55,11 @@ public class RobotContainer
 
         //Add options the autonomous chooser
         autoChooser.addOption("Autonomous Drive", simpleAutonomousCommand);
-        autoChooser.addOption("Haloween Auto", halloweenAutonomousCommand);
 
         // Put the chooser on the dashboard
         Shuffleboard.getTab("Autonomous").add(autoChooser);
-        SmartDashboard.putNumber("Distance", distanceSensor.getRange());
-        System.out.println(distanceSensor.getRange());
+        //SmartDashboard.putNumber("Distance", distanceSensor.getRange());
+        //System.out.println(distanceSensor.getRange());
         
 
         //Set driving mode
@@ -82,8 +79,8 @@ public class RobotContainer
         //Names buttons
         JoystickButton m_1 = new JoystickButton(m_stick, 1);
         JoystickButton m_2 = new JoystickButton(m_stick, 2);
-        JoystickButton m_3 = new JoystickButton(m_stick, 3);
-        JoystickButton m_4 = new JoystickButton(m_stick, 4);
+        // JoystickButton m_3 = new JoystickButton(m_stick, 3);
+        // JoystickButton m_4 = new JoystickButton(m_stick, 4);
 
         //JoystickButton s_1 = new JoystickButton(s_stick, 1);
         //Binds buttons
@@ -91,8 +88,8 @@ public class RobotContainer
         m_1.whenPressed(shootTshirt);
         m_2.whenPressed(safetyOff);
         m_2.whenReleased(safetyOn);
-        m_3.whenPressed(reloadTshirt);
-        m_4.whenPressed(releaseReloadArm);
+        //m_3.whenPressed(reloadTshirt);
+        //m_4.whenPressed(releaseReloadArm);
 
     }
 
