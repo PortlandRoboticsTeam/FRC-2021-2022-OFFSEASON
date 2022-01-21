@@ -30,7 +30,7 @@ public class DriveSlide extends CommandBase {
 
     @Override
     public void execute() {
-        drive.slideDrive(forward.getAsDouble(), side.getAsDouble(), twist.getAsDouble(), throttle.getAsDouble(), 1);
+        drive.slideDrive(forward.getAsDouble(), side.getAsDouble(), twist.getAsDouble(), throttle.getAsDouble());
         //drivetrain.slideDriveSimple(m_stick.getY(), m_stick.getX(), m_stick.getTwist());
         //drive.slideDriveSimple(forward.getAsDouble(), side.getAsDouble(), twist.getAsDouble(), 0.5);
     }

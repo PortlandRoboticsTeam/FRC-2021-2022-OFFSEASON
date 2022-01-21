@@ -50,10 +50,10 @@ public class Drivetrain extends SubsystemBase {
         return 0;
     }
 
-    public void slideDrive(double forward, double side, double twist, double throttle, double scale) {
-        forward = smoothLogisticInput(forward) * scale;
-        side = smoothLogisticInput(side) * scale;
-        twist = smoothLogisticInput(twist) * scale;
+    public void slideDrive(double forward, double side, double twist, double throttle) {
+        forward = smoothLogisticInput(forward) * throttle;
+        side = smoothLogisticInput(side) * throttle;
+        twist = smoothLogisticInput(twist) * throttle;
         drive.arcadeDrive(forward, twist);
         drive.feedWatchdog();
     }
