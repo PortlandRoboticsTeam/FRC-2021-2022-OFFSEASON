@@ -34,12 +34,6 @@ public class RobotContainer
     //Command definitions
     private final AutoDrive simpleAutonomousCommand = new AutoDrive(drivetrain);
 
-    private final ShootTshirt shootTshirt = new ShootTshirt(tshirtCannon);
-    // private final ReloadTshirt reloadTshirt = new ReloadTshirt(tshirtCannon);
-    // private final ReleaseReloadArm releaseReloadArm = new ReleaseReloadArm(tshirtCannon);
-    private final SafetyOff safetyOff = new SafetyOff(tshirtCannon);
-    private final SafetyOn safetyOn = new SafetyOn(tshirtCannon);
-
     //Joystick definitions
     public static Joystick m_stick = new Joystick(mStickPort);
     public static Joystick s_stick = new Joystick(sStickPort);
@@ -58,8 +52,6 @@ public class RobotContainer
 
         // Put the chooser on the dashboard
         Shuffleboard.getTab("Autonomous").add(autoChooser);
-        //SmartDashboard.putNumber("Distance", distanceSensor.getRange());
-        //System.out.println(distanceSensor.getRange());
         
 
         //Set driving mode
@@ -85,11 +77,11 @@ public class RobotContainer
         //JoystickButton s_1 = new JoystickButton(s_stick, 1);
         //Binds buttons
 
-        m_1.whenPressed(shootTshirt);
-        m_2.whenPressed(safetyOff);
-        m_2.whenReleased(safetyOn);
-        //m_3.whenPressed(reloadTshirt);
-        //m_4.whenPressed(releaseReloadArm);
+        m_1.whenPressed(new ShootTshirt(tshirtCannon));
+        m_2.whenPressed(new SafetyOff(tshirtCannon));
+        m_2.whenReleased(new SafetyOn(tshirtCannon));
+        //m_3.whenPressed(new ReloadTshirt(tshirtCannon));
+        //m_4.whenPressed(new ReleaseReloadArm(tshirtCannon));
 
     }
 

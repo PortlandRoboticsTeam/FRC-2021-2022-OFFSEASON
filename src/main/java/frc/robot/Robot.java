@@ -47,13 +47,7 @@ public class Robot extends TimedRobot
         
         robotContainer = new RobotContainer();
         
-        /*
-        m_led = new AddressableLED(0);
-        m_ledBuffer = new AddressableLEDBuffer(150);
-        m_led.setLength(m_ledBuffer.getLength());
-        m_led.setData(m_ledBuffer);
-        m_led.start();
-        */
+        
     }
 
     /**
@@ -84,8 +78,7 @@ public class Robot extends TimedRobot
     @Override
     public void disabledPeriodic()
     {
-        //teamColors();
-        //m_led.setData(m_ledBuffer);
+
     }
 
     /**
@@ -122,7 +115,6 @@ public class Robot extends TimedRobot
         {
             autonomousCommand.cancel();
         }
-        //WheelSpinner.setupColorMatch();
     }
 
     /**
@@ -131,17 +123,7 @@ public class Robot extends TimedRobot
     @Override
     public void teleopPeriodic()
     {
-        //WheelSpinner.pushRawToDashboard();
         
-        //int[] color = WheelSpinner.detectNamedColor();
-        //SmartDashboard.putData("Accelerometer", acceleromenter);
-        /*
-        for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            m_ledBuffer.setRGB(i, color[0], color[1], color[2]);
-         }
-         
-         m_led.setData(m_ledBuffer);
-        */
     }
 
     @Override
@@ -157,46 +139,7 @@ public class Robot extends TimedRobot
     @Override
     public void testPeriodic()
     {
-        //rainbow();
-        //m_led.setData(m_ledBuffer);
+        
     }
 
-    /*
-    private void rainbow() {
-        
-        // For every pixel
-        for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-          // Calculate the hue - hue is easier for rainbows because the color
-          // shape is a circle so only one value needs to precess
-          final var hue = (m_rainbowFirstPixelHue + (i * 180 / m_ledBuffer.getLength())) % 180;
-          // Set the value
-          m_ledBuffer.setHSV(i, hue, 255, 128);
-        }
-        // Increase by to make the rainbow "move"
-        m_rainbowFirstPixelHue += 3;
-        // Check bounds
-        m_rainbowFirstPixelHue %= 180;
-      }
-
-      
-    private void teamColors() {
-        x++;
-        for (var i = 0; i < m_ledBuffer.getLength(); i+=4) {
-            m_ledBuffer.setHSV(i, 0, (int)(128*Math.cos(((Math.PI / 128) * x)-1) + 128), 
-                                     (int)(128*Math.cos(((Math.PI / 64) * x)-1) + 128));
-          }
-        for (var i = 1; i < m_ledBuffer.getLength(); i+=4) {
-            m_ledBuffer.setHSV(i, 0, (int)(128*Math.cos(((Math.PI / 128) * (x+64))-1) + 128), 
-                                     (int)(128*Math.cos(((Math.PI / 64) * (x+32))-1) + 128));
-        }
-        for (var i = 2; i < m_ledBuffer.getLength(); i+=4) {
-            m_ledBuffer.setHSV(i, 0, (int)(128*Math.cos(((Math.PI / 128) * (x+128))-1) + 128), 
-                                     (int)(128*Math.cos(((Math.PI / 64) * (x+64))-1) + 128));
-        }
-        for (var i = 3; i < m_ledBuffer.getLength(); i+=4) {
-            m_ledBuffer.setHSV(i, 0, (int)(128*Math.cos(((Math.PI / 128) * (x+192))-1) + 128), 
-                                     (int)(128*Math.cos(((Math.PI / 64) * (x+96))-1) + 128));
-        }
-        
-    } */
 }
