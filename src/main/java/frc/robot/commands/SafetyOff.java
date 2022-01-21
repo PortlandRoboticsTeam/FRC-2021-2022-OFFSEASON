@@ -15,7 +15,7 @@ public class SafetyOff extends CommandBase{
 
     @Override
     public void initialize(){
-        tshirtCannon.safetyOff();
+        tshirtCannon.safetySet(true);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class SafetyOff extends CommandBase{
 
     @Override
     public boolean isFinished(){
-        return false;
+        return true;
 
     }
 

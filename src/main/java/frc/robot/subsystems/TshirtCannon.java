@@ -18,14 +18,9 @@ public class TshirtCannon extends SubsystemBase{
         //reloadSolenoid.set(Value.kReverse);
     }
 
-    public void shootTshirt(){
-        System.out.println("fireing " + safety);
-        if(safety){
-            releaseSolenoid.set(true);
-            new WaitCommand(0.25);
-            releaseSolenoid.set(false);
-        safety = false;
-        }
+
+    public void setFireSolenoid(Boolean state){
+        releaseSolenoid.set(state);
     }
 
     public void extendReloadArm(){
@@ -40,21 +35,12 @@ public class TshirtCannon extends SubsystemBase{
         //reloadSolenoid.set(Value.kOff);
     }
 
-    public void reload(){
-        extendReloadArm();
-        new WaitCommand(5);
-        retractReloadArm();
+    public void safetySet(Boolean state){
+        safety = state;
     }
 
-    public void safetyOff(){
-        safety = true;
-        System.out.println(safety);
-    }
-
-    public void safetyOn(){
-        new WaitCommand(0.5);
-        safety = false;
-        System.out.println("therminated " + safety);
+    public Boolean getSafety(){
+        return safety;
     }
 
 
