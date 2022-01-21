@@ -18,8 +18,8 @@ public class TshirtCannon extends SubsystemBase{
     }
 
 
-    public void setFireSolenoid(Boolean state){
-        releaseSolenoid.set(state);
+    public void setFireSolenoid(Boolean fireState){
+        releaseSolenoid.set(fireState);
     }
 
     public void extendReloadArm(){
@@ -34,8 +34,8 @@ public class TshirtCannon extends SubsystemBase{
         //reloadSolenoid.set(Value.kOff);
     }
 
-    public void safetySet(Boolean state){
-        safety = state;
+    public void safetySet(Boolean safetyState){
+        safety = safetyState;
     }
 
     public Boolean getSafety(){

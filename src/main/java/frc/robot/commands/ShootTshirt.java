@@ -20,11 +20,14 @@ public class ShootTshirt extends CommandBase{
     public void initialize(){
         fireTimer.start();
         System.out.println("fireing " + tshirtCannon.getSafety());
+        if(tshirtCannon.getSafety()){
+            tshirtCannon.setFireSolenoid(true);
+        }
     }
 
     @Override
     public void execute(){
-        tshirtCannon.setFireSolenoid(true);
+
     }
 
     @Override
