@@ -8,9 +8,11 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.shuffleboard.EventImportance;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
@@ -44,6 +46,24 @@ public class RobotContainer
     
     //The container for the robot.  Contains subsystems, OI devices, and commands.
     public RobotContainer() {
+            // Set the scheduler to log Shuffleboard events for command initialize, interrupt, finish
+        CommandScheduler.getInstance()
+        .onCommandInitialize(
+            command ->
+                Shuffleboard.addEventMarker(
+                    "Command initialized", command.getName(), EventImportance.kNormal));
+        CommandScheduler.getInstance()
+            .onCommandInterrupt(
+                command ->
+                    Shuffleboard.addEventMarker(
+                        "Command interrupted", command.getName(), EventImportance.kNormal));
+        CommandScheduler.getInstance()
+            .onCommandFinish(
+                command ->
+                    Shuffleboard.addEventMarker(
+                        "Command finished", command.getName(), EventImportance.kNormal));
+        
+        
         // Configure the button bindings
         configureButtonBindings();
 
