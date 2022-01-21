@@ -51,7 +51,6 @@ public class Drivetrain extends SubsystemBase {
     }
 
     public void slideDrive(double forward, double side, double twist, double throttle) {
-        throttle = (throttle+1.0)/2;
         forward = smoothLogisticInput(forward) * throttle;
         side = smoothLogisticInput(side) * throttle;
         twist = smoothLogisticInput(twist) * throttle;
