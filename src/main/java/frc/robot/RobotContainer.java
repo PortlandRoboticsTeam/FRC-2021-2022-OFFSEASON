@@ -80,8 +80,7 @@ public class RobotContainer
                         () -> m_stick.getY(),
                         () -> m_stick.getX(),
                         () -> m_stick.getTwist(),
-                        () -> m_stick.getThrottle(),
-                        () -> m_stick.getTrigger()));
+                        () -> m_stick.getThrottle()));
         
 
     }
