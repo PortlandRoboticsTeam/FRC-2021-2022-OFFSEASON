@@ -45,25 +45,7 @@ public class RobotContainer
 
     
     //The container for the robot.  Contains subsystems, OI devices, and commands.
-    public RobotContainer() {
-            // Set the scheduler to log Shuffleboard events for command initialize, interrupt, finish
-        CommandScheduler.getInstance()
-        .onCommandInitialize(
-            command ->
-                Shuffleboard.addEventMarker(
-                    "Command initialized", command.getName(), EventImportance.kNormal));
-        CommandScheduler.getInstance()
-            .onCommandInterrupt(
-                command ->
-                    Shuffleboard.addEventMarker(
-                        "Command interrupted", command.getName(), EventImportance.kNormal));
-        CommandScheduler.getInstance()
-            .onCommandFinish(
-                command ->
-                    Shuffleboard.addEventMarker(
-                        "Command finished", command.getName(), EventImportance.kNormal));
-        
-        
+    public RobotContainer() {        
         // Configure the button bindings
         configureButtonBindings();
 
